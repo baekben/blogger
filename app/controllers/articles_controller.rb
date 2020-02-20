@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
     include ArticlesHelper
 
+
     def index
         @articles = Article.all 
     end
@@ -28,6 +29,14 @@ class ArticlesController < ApplicationController
 
     def destroy
         @article = Article.find(params[:id])
+
+        @article.tags.each do |tag|
+            if tag.taggings.count == 1
+              @tag = Tag.find(tag.id)
+              @tag.destroy
+            end
+        end
+        
         @article.destroy
 
         flash.notice = "Article '#{@article.title}' Deleted."

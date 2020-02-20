@@ -1,4 +1,5 @@
 class TagsController < ApplicationController
+    includes ArticlesHelper
 
     def index
         @tags = Tag.all 
