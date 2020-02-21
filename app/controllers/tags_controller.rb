@@ -1,5 +1,6 @@
 class TagsController < ApplicationController
     includes ArticlesHelper
+    before_filter :require_login, only: [:destroy]
 
     def index
         @tags = Tag.all 
