@@ -1,5 +1,8 @@
 <h1>All Articles</h1>
 
+<% content_for(:sidebar) do %>
+    <%= render :partial => "layouts/sidebar"%>
+<% end %>
 <ul id = "articles">
     <% @articles.each do |article| %>
         <li>
