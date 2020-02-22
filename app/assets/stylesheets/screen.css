@@ -622,12 +622,11 @@ p.tag_list {
 }
 #sidebar {
   font-weight: bold;
-  width: 150px;
-  padding: 15px 10px;
-  float: right;
-  margin: -15px -20px 0 0;
-  position: relative;
-  z-index: 1;
+  width: 75px;
+  padding: 10px 5px;
+  float: left;
+
+  position: absolute;
 }
 #sidebar ul {
   margin: 0.5em 0;

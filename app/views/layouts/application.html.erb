@@ -11,16 +11,25 @@
   </head>
 
   <body>
-
+    
     <p class="flash">
       <%= flash.notice %>
     </p>
     
-    <div id = "container"> 
-    <%= yield :sidebar %>  
+    <div id = "container">  
       <div id = "content">  
-        
         <%= yield %>
+        <div id = 'sidebar'>
+          <h2><strong>MENU<strong></h2>
+          <ul >
+            <li>
+              <h6><%= link_to "Articles", articles_path %></h6>
+            </li>
+            <li>
+              <h6><%= link_to "Tags", tags_path %></h6>
+            </li>
+          </ul>
+        </div>
         <hr>
         <h6>
           <% if logged_in? %>
